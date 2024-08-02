@@ -12,9 +12,9 @@
         </div>
     @endif
 
-    <form action="/reset-password" method="POST">
+    <form action="{{ route('password.update') }}" method="POST">
         @csrf
-        
+
         <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
         <input id="email" type="email" name="email" value="{{ old('email', $request->email) }}" autofocus>

@@ -1,5 +1,5 @@
 <x-layouts.guest>
-    <h1>Forgot Password</h1>
+    <h1>Confirm Password</h1>
 
     @if ($errors->any())
         <div>
@@ -18,11 +18,11 @@
         </div>
     @endif
 
-    <form action="{{route('password.email')}}" method="POST">
+    <form action="{{ route('password.confirm') }}" method="POST">
         @csrf
 
-        <input id="email" type="email" name="email">
+        <input id="password" type="password" name="password" autofocus>
 
-        <button type="submit">Forgot Password</button>
+        <button type="submit">Confirm Password</button>
     </form>
 </x-layouts.guest>

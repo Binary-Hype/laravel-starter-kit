@@ -23,6 +23,8 @@
                 @csrf
                 <button type="submit">Logout</button>
             </form>
+
+            <a href="{{route('account')}}">Account</a>
         </div>
 
         {{ $slot }}
