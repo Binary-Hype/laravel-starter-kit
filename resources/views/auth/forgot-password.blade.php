@@ -1,5 +1,5 @@
 <x-layouts.guest>
-    <h1>Login</h1>
+    <h1>Forgot Password</h1>
 
     @if ($errors->any())
         <div>
@@ -18,18 +18,11 @@
         </div>
     @endif
 
-    <form action="{{ route('login') }}" method="POST">
+    <form action="/forgot-password" method="POST">
         @csrf
 
-        <input id="email" type="email" name="email" value="{{ old(('email')) }}" autofocus>
+        <input id="email" type="email" name="email">
 
-        <input id="password" type="password" name="password">
-
-        <label for="remember">
-            <input id="remember" type="checkbox" name="remember">
-            <span>Remember Me</span>
-        </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Forgot Password</button>
     </form>
 </x-layouts.guest>
-
