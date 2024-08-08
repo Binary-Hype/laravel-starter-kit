@@ -4,7 +4,6 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
-use Laravel\Fortify\Features;
 
 uses(RefreshDatabase::class);
 
@@ -47,7 +46,6 @@ it('can login a user', function () {
     $this->assertAuthenticatedAs($user);
 });
 
-
 it('can logout a user', function () {
     $user = User::factory()->create();
 
@@ -76,7 +74,6 @@ it('can request a password reset link', function () {
 
     Notification::assertSentTo($user, \Illuminate\Auth\Notifications\ResetPassword::class);
 });
-
 
 it('can reset a user password', function () {
     $user = User::factory()->create([
